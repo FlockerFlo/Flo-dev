@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a passionate developer creating beautiful and functional web experiences. Let's build something amazing together.</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="mailto:your.email@example.com" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div>
+                <h2>About Me</h2>
+                <p>I'm a creative developer with a passion for crafting elegant solutions to complex problems. With years of experience in web development, I specialize in building responsive, user-friendly applications that make a difference.</p>
+                <p>My journey in tech started with a curiosity about how things work, and has evolved into a career dedicated to continuous learning and innovation. I believe in writing clean, maintainable code and creating experiences that users love.</p>
+                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                <div class="skills">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="About Me" class="about-image">
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" alt="Project 1">
+                        <h3>Project One</h3>
+                        <p>A comprehensive dashboard application built with modern web technologies. Features real-time data visualization and responsive design.</p>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop" alt="Project 2">
+                        <h3>Project Two</h3>
+                        <p>E-commerce platform with seamless checkout experience and inventory management. Built for scalability and performance.</p>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop" alt="Project 3">
+                        <h3>Project Three</h3>
+                        <p>Mobile-first web application focusing on user experience and accessibility. Integrated with RESTful APIs for dynamic content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn" onclick="previousSlide()">‹</button>
+                <button class="slider-btn" onclick="nextSlide()">›</button>
+            </div>
+            <div class="slider-dots" id="dots"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
