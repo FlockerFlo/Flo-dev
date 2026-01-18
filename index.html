@@ -21,6 +21,25 @@
 
         <!-- Hero Content -->
         <div class="hero-content">
+            <div class="hero-logo">
+                <!-- Optimized logo with fallback -->
+                <picture>
+                    <!-- WebP format for modern browsers (add your optimized logo.webp here) -->
+                    <source srcset="images/logo.webp" type="image/webp">
+                    <!-- Fallback to PNG (add your logo.png here) -->
+                    <source srcset="images/logo.png" type="image/png">
+                    <!-- Final fallback with lazy loading -->
+                    <img 
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect fill='%23fff' width='120' height='120' rx='20'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='40' font-weight='bold' fill='%23667eea'%3EWD%3C/text%3E%3C/svg%3E"
+                        alt="Company Logo"
+                        loading="eager"
+                        class="logo-img"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+                    <!-- Fallback placeholder if image fails -->
+                    <div class="logo-placeholder" style="display: none;">WD</div>
+                </picture>
+            </div>
             <h1>Expert Website Maintenance & Web Development</h1>
             <p>We monitor, maintain, and build websites that are fast, secure, and designed to evolve with your business.</p>
             <div class="cta-buttons">
@@ -60,12 +79,18 @@
                     <h3>Development</h3>
                     <p>Building modern, responsive websites and applications using cutting-edge technologies.</p>
                     <div class="skill-tags">
+                        <span class="skill-tag">PHP</span>
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">React</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">HTML/CSS</span>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Wordpress</span>
+                        <span class="skill-tag">Shopify</span>
+                        <span class="skill-tag">Wix</span>
+                        <span class="skill-tag">Divi</span>
+                        <span class="skill-tag">Elementor</span>
                     </div>
                 </div>
 
@@ -105,30 +130,93 @@
                         <span class="skill-tag">Page Speed Optimization</span>
                     </div>
                 </div>
+                <!-- Technical SEO -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Technical SEO</h3>
+                    <p>Improve your search engine rankings with technical optimization and best practices.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Schema Markup</span>
+                        <span class="skill-tag">XML Sitemaps</span>
+                        <span class="skill-tag">Core Web Vitals</span>
+                        <span class="skill-tag">Mobile Optimization</span>
+                        <span class="skill-tag">SEO Audits</span>
+                    </div>
+                </div>
+                 <!-- DNS Services -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>DNS Services</h3>
+                    <p>Reliable domain name system management for optimal website availability and performance.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DNS Management</span>
+                        <span class="skill-tag">Domain Configuration</span>
+                        <span class="skill-tag">DNS Records Setup</span>
+                        <span class="skill-tag">Cloudflare Integration</span>
+                        <span class="skill-tag">Email DNS Configuration</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
-        <h2>My Portfolio</h2>
+        <h2>Portfolio</h2>
         <div class="slider-container">
             <div class="slider">
                 <div class="slides" id="slides">
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" alt="Project 1">
-                        <h3>Project One</h3>
-                        <p>A comprehensive dashboard application built with modern web technologies. Features real-time data visualization and responsive design.</p>
+                        <picture>
+                            <source srcset="images/web-development-portfolio1.webp" type="image/webp">
+                            <source srcset="images/web-development-portfolio1.jpg" type="image/jpeg">
+                            <img 
+                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e0e0e0' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProject 1 Image%3C/text%3E%3C/svg%3E"
+                                alt="Project 1"
+                                loading="lazy"
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23f0f0f0\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'%23999\'%3EImage Not Available%3C/text%3E%3C/svg%3E';"
+                            >
+                        </picture>
+                        <h3>Custom Wordpress Websites</h3>
+                        <p>I build custom WordPress themes from scratch, using PHP and native WordPress functions, then integrate Flexible Content to create reusable content modules. </p>
                     </div>
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop" alt="Project 2">
-                        <h3>Project Two</h3>
-                        <p>E-commerce platform with seamless checkout experience and inventory management. Built for scalability and performance.</p>
+                        <picture>
+                            <source srcset="images/portfolio3mockups.webp" type="image/webp">
+                            <source srcset="images/portfolio3mockups.jpg" type="image/jpeg">
+                            <img 
+                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e0e0e0' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProject 2 Image%3C/text%3E%3C/svg%3E"
+                                alt="Project 2"
+                                loading="lazy"
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23f0f0f0\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'%23999\'%3EImage Not Available%3C/text%3E%3C/svg%3E';"
+                            >
+                        </picture>
+                        <h3>Page builders design and development</h3>
+                        <p>
+                            For sites built with Divi or Elementor, I leverage the
+                            visual builder for rapid layout creation while
+                            extending its capabilities through custom CSS and
+                            JavaScript. This approach allows me to overcome
+                            builder limitations, styling elements more precisely,
+                            introducing custom animations, or modifying DOM
+                            behavior.</p>
                     </div>
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop" alt="Project 3">
-                        <h3>Project Three</h3>
-                        <p>Mobile-first web application focusing on user experience and accessibility. Integrated with RESTful APIs for dynamic content.</p>
+                        <picture>
+                            <source srcset="images/portfolioo2-mockups.webp" type="image/webp">
+                            <source srcset="images/portfolio2-mockups.jpg" type="image/jpeg">
+                            <img 
+                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e0e0e0' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProject 3 Image%3C/text%3E%3C/svg%3E"
+                                alt="Project 3"
+                                loading="lazy"
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23f0f0f0\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'%23999\'%3EImage Not Available%3C/text%3E%3C/svg%3E';"
+                            >
+                        </picture>
+                        <h3>Reusable content modules</h3>
+                        <p>
+                            Many of the websites I develop use Advanced Custom
+                            Fields (ACF) Flexible Content to give clients full control
+                            over their page layouts without needing to touch code.</p>
                     </div>
                 </div>
             </div>

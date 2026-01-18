@@ -53,3 +53,26 @@ function handleSubmit(event) {
     
     window.location.href = mailtoLink;
 }
+
+// Lazy load image handler
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle lazy loaded images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    lazyImages.forEach(img => {
+        img.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+        
+        // If image is already loaded (cached)
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+    });
+
+    // Handle hero logo specifically
+    const logoImg = document.querySelector('.logo-img');
+    if (logoImg && logoImg.complete) {
+        logoImg.style.opacity = '1';
+    }
+});
