@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert Website Maintenance & Web Development</title>
+    <meta name="description" content="Professional website maintenance and web development services. We build, monitor, and secure fast, responsive websites with WordPress, React, and custom solutions.">
+    <link rel="canonical" href="https://expertwebmaintenance.com/">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Expert Website Maintenance & Web Development">
+    <meta property="og:description" content="Professional website maintenance and web development services. We build, monitor, and secure fast, responsive websites.">
+    <meta property="og:image" content="https://expertwebmaintenance.com/images/og-image.jpg">
+    <meta property="og:url" content="expertwebmaintenance.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Expert Website Maintenance & Web Development">
+    <meta name="twitter:description" content="Professional website maintenance and web development services.">
+    <meta name="twitter:image" content="https://expertwebmaintenance.com/images/og-image.jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -37,7 +52,7 @@
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                     >
                     <!-- Fallback placeholder if image fails -->
-                    <div class="logo-placeholder" style="display: none;">WD</div>
+                    <div class="logo-placeholder" style="display: none;">EWM</div>
                 </picture>
             </div>
             <h1>Expert Website Maintenance & Web Development</h1>
@@ -249,9 +264,28 @@
                 <textarea id="message" name="message" required></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
+            <input type="hidden" name="_next" value="https://yourdomain.com/#contact">
         </form>
     </section>
 
     <script src="script.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Expert Web Maintenance",
+          "description": "Expert website maintenance and web development services",
+          "url": "https://expertwebmaintenance.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Olympia",
+            "addressRegion": "Washington",
+            "addressCountry": "US"
+          },
+          "areaServed": "US",
+          "priceRange": "$$",
+          "serviceType": ["Website Maintenance", "Web Development", "Security", "Performance Optimization", "Technical SEO"]
+        }
+        </script>
 </body>
 </html>
