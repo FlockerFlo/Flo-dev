@@ -3,6 +3,11 @@ const slides = document.getElementById('slides');
 const totalSlides = document.querySelectorAll('.slide').length;
 const dotsContainer = document.getElementById('dots');
 
+// Touch/Swipe variables
+let touchStartX = 0;
+let touchEndX = 0;
+let isDragging = false;
+
 // Create dots
 for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('div');
@@ -36,8 +41,68 @@ function goToSlide(index) {
     updateSlider();
 }
 
+// Handle swipe gestures
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum swipe distance in pixels
+    
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swiped left - go to next slide
+        nextSlide();
+    }
+    
+    if (touchEndX > touchStartX + swipeThreshold) {
+        // Swiped right - go to previous slide
+        previousSlide();
+    }
+}
+
+// Touch event listeners
+const sliderContainer = document.querySelector('.slider-container');
+
+sliderContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    isDragging = true;
+}, { passive: true });
+
+sliderContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    touchEndX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+sliderContainer.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    handleSwipe();
+    isDragging = false;
+}, { passive: true });
+
+// Mouse drag support for desktop (optional bonus)
+sliderContainer.addEventListener('mousedown', (e) => {
+    touchStartX = e.screenX;
+    isDragging = true;
+    sliderContainer.style.cursor = 'grabbing';
+});
+
+sliderContainer.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    touchEndX = e.screenX;
+});
+
+sliderContainer.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    handleSwipe();
+    isDragging = false;
+    sliderContainer.style.cursor = 'grab';
+});
+
+sliderContainer.addEventListener('mouseleave', () => {
+    if (isDragging) {
+        isDragging = false;
+        sliderContainer.style.cursor = 'grab';
+    }
+});
+
 // Auto-play slider
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 8000);
 
 // Contact form handler
 function handleSubmit(event) {
@@ -104,3 +169,30 @@ if (hamburger) {
         }
     });
 }
+
+// Parallax Effect for Services Section
+function initServicesParallax() {
+    const servicesSection = document.querySelector('.services');
+    const mountainBack = document.querySelector('.services-mountain-back');
+    const mountain = document.querySelector('.services-mountain');
+    
+    if (!servicesSection || !mountainBack || !mountain) return;
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const sectionTop = servicesSection.offsetTop;
+        const sectionHeight = servicesSection.offsetHeight;
+        
+        // Only apply parallax when section is in view
+        if (scrolled + window.innerHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
+            const offset = scrolled - sectionTop;
+            
+            // Different speeds for layered effect
+            mountainBack.style.transform = `translateY(${offset * 0.3}px)`;
+            mountain.style.transform = `translateY(${offset * 0.5}px)`;
+        }
+    });
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initServicesParallax);

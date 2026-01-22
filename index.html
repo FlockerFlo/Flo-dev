@@ -35,6 +35,9 @@
 
         gtag('config', 'G-0MFW4628TL');
     </script>
+    <!-- Calendly widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
     <header class="main-header">
@@ -62,6 +65,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn-nav-cta">Book a Call</a></li>
             </ul>
         </nav>
     </header>
@@ -111,11 +115,12 @@
         <div class="about-content">
             <div>
                 <h2>About</h2>
-                <p>I'm a creative developer with a passion for crafting elegant solutions to complex problems. With years of experience in web development, I specialize in building responsive, user-friendly applications while also providing reliable website maintenance and security.</p>
-                <p>My journey in tech started with a curiosity about how things work and has evolved into a career focused on creating stable, high-performing websites. I believe in writing clean, maintainable code and ensuring sites remain secure, updated, and optimized long after launch.</p>
-                <p>When I'm not coding, you can find me exploring new technologies, improving performance and security best practices, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                <p>I'm a professional web developer specializing in custom website development, ongoing website maintenance, and emergency website repairs. With years of experience building WordPress sites, e-commerce platforms, and custom web applications, I help businesses maintain fast, secure, and high-performing websites that drive results.</p>
+                <p>My comprehensive services include regular website updates, security hardening, performance optimization, technical SEO implementation, and 24/7 emergency support for critical website issues. Whether you need a new website built from scratch using React, PHP, or WordPress, or require dependable maintenance to keep your existing site running smoothly, I provide tailored solutions that evolve with your business needs.</p>
+                <p>I'm available for emergency website repairs including security breaches, malware removal, site crashes, and urgent performance issues. From DNS configuration and database optimization to core web vitals improvements and mobile responsiveness, I ensure your website remains accessible, secure, and optimized for search engines around the clock.</p>
                 <div class="skills">
                     <a href="#contact" class="btn-about">Contact Us</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn-about-book">Book a Call</a>
                 </div>
             </div>
             <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="About Me" class="about-image">
@@ -123,6 +128,10 @@
     </section>
     <!-- Services Section -->
     <section class="services" id="services">
+        <div class="services-background">
+            <div class="services-mountain-back"></div>
+            <div class="services-mountain"></div>
+        </div>
         <div class="container">
             <div class="section-header">
                 <h2>Services</h2>
@@ -338,7 +347,11 @@
             
             <div class="footer-section">
                 <h3>Contact</h3>
-                <!-- <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p> -->
+                <!-- Calendly Button -->
+                <div class="cta-buttons">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn btn-primary">Book a Call
+                    </a>
+                </div>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>

@@ -36,6 +36,38 @@ body {
         height: 40px;
     }
 }
+/* Nav CTA Button */
+.btn-nav-cta {
+    background: #667eea;
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-nav-cta:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Adjust nav links gap to accommodate button */
+.nav-links {
+    align-items: center;
+}
+
+/* Mobile styles for nav button */
+@media (max-width: 768px) {
+    .btn-nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -234,6 +266,13 @@ body {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .about-content .skills {
+        justify-content: center;
+    }
+}
+
+
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -286,10 +325,140 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-/* Services Section */
+.btn-about {
+    width: auto;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+}
+.btn-about:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+/* Animated Gradient Border Button */
+.btn-about-book {
+    position: relative;
+    width: auto;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    background: white;
+    border-radius: 50px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, color 0.3s;
+}
+
+/* Inner gradient background */
+.btn-about-book::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    border-radius: 50px;
+    z-index: -1;
+}
+
+/* Spinning gradient border */
+.btn-about-book::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #667eea, #764ba2);
+    background-size: 300% 300%;
+    border-radius: 53px;
+    z-index: -2;
+    animation: gradientSpin 3s linear infinite;
+}
+
+.btn-about-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes gradientSpin {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Services Section with Parallax Background */
 .services {
+    position: relative;
     padding: 5rem 2rem;
-    background: #f8f9fa;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.services-background {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    top: -10%;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    will-change: transform;
+}
+
+.services-mountain-back {
+    position: absolute;
+    top: 0; /* Changed from bottom */
+    width: 100%;
+    height: 60%; /* Increased from 40% */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+    clip-path: polygon(0 0, 15% 35%, 30% 25%, 45% 45%, 60% 30%, 75% 50%, 90% 35%, 100% 55%, 100% 0);
+    will-change: transform;
+}
+
+.services-mountain {
+    position: absolute;
+    top: 10%; /* Position from top instead of bottom */
+    width: 100%;
+    height: 70%; /* Increased from 50% */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
+    clip-path: polygon(0 0, 20% 55%, 40% 35%, 60% 65%, 80% 45%, 100% 60%, 100% 0);
+    will-change: transform;
+}
+
+/* Ensure content stays on top */
+.services .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Update section header for white text */
+.services .section-header h2,
+.services .section-header p {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Update service cards to stand out on purple background */
+.service-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 .container {
@@ -398,7 +567,7 @@ body {
 }
 
 .slider-container {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin: 0 auto;
     position: relative;
 }
@@ -418,14 +587,17 @@ body {
     min-width: 100%;
     background: white;
     padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slide img {
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
 }
 
 .slide h3 {
@@ -438,6 +610,10 @@ body {
     font-size: 1.1rem;
     color: #666;
     line-height: 1.8;
+}
+
+.slide p, .slide h3 {
+    max-width: 850px;;
 }
 
 /* Slider Controls */
@@ -485,9 +661,36 @@ body {
 }
 
 /* Contact Section */
+
 .contact {
     padding: 5rem 2rem;
+    position: relative;
     background: white;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/contact-bg.png');
+    background-position: left;
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Ensure content stays on top */
+.contact h2,
+.contact-form,
+.cta-buttons,
+.contact p {
+    position: relative;
+    z-index: 1;
 }
 
 .contact h2 {
@@ -580,7 +783,6 @@ body {
     }
 }
 
-/* Header Navigation */
 /* Header Navigation */
 .main-header {
     position: fixed;
@@ -749,8 +951,24 @@ body {
     transition: color 0.3s;
 }
 
+.footer-section .cta-buttons {
+    justify-content: left;
+}
+
 .footer-section a:hover {
     color: #667eea;
+}
+
+.footer-section .btn {
+    color: #667eea;
+    font-size: 16px;
+    padding: 8px 15px 8px 15px;
+    border-radius: 5%;
+}
+
+.footer-section .btn:hover {
+    background-color: #667eea;
+    color: #fff;
 }
 
 .social-links {
