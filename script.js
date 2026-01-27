@@ -102,7 +102,7 @@ sliderContainer.addEventListener('mouseleave', () => {
 });
 
 // Auto-play slider
-setInterval(nextSlide, 8000);
+setInterval(nextSlide, 9000);
 
 // Contact form handler
 function handleSubmit(event) {
