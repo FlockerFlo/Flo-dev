@@ -196,3 +196,112 @@ function initServicesParallax() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', initServicesParallax);
+
+// Testimonials 
+
+// Testimonials Slider - Using unique variable names to avoid conflicts
+        const testimonialsTrack = document.getElementById('track');
+        const testimonialPrevBtn = document.getElementById('prevBtn');
+        const testimonialNextBtn = document.getElementById('nextBtn');
+        const testimonialDotsContainer = document.getElementById('testimonialDots');
+        const testimonialSlides = document.querySelectorAll('.testimonial');
+        
+        let testimonialCurrentIndex = 0;
+        let testimonialAutoplayInterval;
+        const testimonialAutoplayDelay = 5000; // 5 seconds
+
+        // Create dots for testimonials
+        testimonialSlides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToTestimonial(index));
+            testimonialDotsContainer.appendChild(dot);
+        });
+
+        const testimonialDots = testimonialDotsContainer.querySelectorAll('.dot');
+
+        function updateTestimonialSlider() {
+            testimonialsTrack.style.transform = `translateX(-${testimonialCurrentIndex * 100}%)`;
+            
+            // Update dots
+            testimonialDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === testimonialCurrentIndex);
+            });
+
+            // Update button states
+            testimonialPrevBtn.disabled = testimonialCurrentIndex === 0;
+            testimonialNextBtn.disabled = testimonialCurrentIndex === testimonialSlides.length - 1;
+        }
+
+        function goToTestimonial(index) {
+            testimonialCurrentIndex = index;
+            updateTestimonialSlider();
+            resetTestimonialAutoplay();
+        }
+
+        function nextTestimonial() {
+            if (testimonialCurrentIndex < testimonialSlides.length - 1) {
+                testimonialCurrentIndex++;
+            } else {
+                testimonialCurrentIndex = 0; // Loop back to first
+            }
+            updateTestimonialSlider();
+        }
+
+        function prevTestimonial() {
+            if (testimonialCurrentIndex > 0) {
+                testimonialCurrentIndex--;
+            } else {
+                testimonialCurrentIndex = testimonialSlides.length - 1; // Loop to last
+            }
+            updateTestimonialSlider();
+        }
+
+        function startTestimonialAutoplay() {
+            testimonialAutoplayInterval = setInterval(nextTestimonial, testimonialAutoplayDelay);
+        }
+
+        function resetTestimonialAutoplay() {
+            clearInterval(testimonialAutoplayInterval);
+            startTestimonialAutoplay();
+        }
+
+        // Event listeners for testimonials
+        testimonialNextBtn.addEventListener('click', () => {
+            nextTestimonial();
+            resetTestimonialAutoplay();
+        });
+
+        testimonialPrevBtn.addEventListener('click', () => {
+            prevTestimonial();
+            resetTestimonialAutoplay();
+        });
+
+        // Touch swipe support for testimonials
+        let testimonialTouchStartX = 0;
+        let testimonialTouchEndX = 0;
+
+        testimonialsTrack.addEventListener('touchstart', (e) => {
+            testimonialTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        testimonialsTrack.addEventListener('touchend', (e) => {
+            testimonialTouchEndX = e.changedTouches[0].screenX;
+            handleTestimonialSwipe();
+        });
+
+        function handleTestimonialSwipe() {
+            if (testimonialTouchStartX - testimonialTouchEndX > 50) {
+                nextTestimonial();
+                resetTestimonialAutoplay();
+            }
+            if (testimonialTouchEndX - testimonialTouchStartX > 50) {
+                prevTestimonial();
+                resetTestimonialAutoplay();
+            }
+        }
+
+        // Start autoplay on load
+        startTestimonialAutoplay();
+        updateTestimonialSlider();
