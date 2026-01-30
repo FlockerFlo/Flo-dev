@@ -440,10 +440,8 @@
             
             <div class="footer-section">
                 <h3>Contact</h3>
-                <!-- Calendly Button -->
                 <div class="cta-buttons">
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn btn-primary">Book a Call
-                    </a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn btn-primary">Book a Call</a>
                 </div>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -454,8 +452,58 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Expert Web Maintenance. All rights reserved.</p>
+            <p class="legal-links">
+                <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a> | 
+                <a href="#" onclick="openModal('termsModal'); return false;">Terms of Service</a>
+            </p>
         </div>
     </footer>
+    
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="legal-modal">
+        <div class="legal-modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <div class="legal-text">
+                <p><strong>Last updated: January 29, 2026</strong></p>
+                
+                <h3>Information We Collect</h3>
+                <p>We collect information you provide directly to us when you use our services, including name, email, and project details.</p>
+                
+                <h3>How We Use Your Information</h3>
+                <p>We use the information to provide and improve our services, communicate with you, and fulfill our contractual obligations.</p>
+                
+                <h3>Data Security</h3>
+                <p>We implement appropriate security measures to protect your personal information.</p>
+                
+                <h3>Contact Us</h3>
+                <p>For privacy questions, contact us through our website contact form.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="legal-modal">
+        <div class="legal-modal-content">
+            <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Terms of Service</h2>
+            <div class="legal-text">
+                <p><strong>Last updated: January 29, 2026</strong></p>
+                
+                <h3>Services</h3>
+                <p>Expert Web Maintenance provides web development and maintenance services as agreed upon with clients.</p>
+                
+                <h3>Payment Terms</h3>
+                <p>Payment terms are outlined in individual project agreements.</p>
+                
+                <h3>Intellectual Property</h3>
+                <p>Upon full payment, clients receive ownership of deliverables as specified in project agreements.</p>
+                
+                <h3>Limitation of Liability</h3>
+                <p>Services are provided "as is" within the scope of the agreed project terms.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script type="application/ld+json">
