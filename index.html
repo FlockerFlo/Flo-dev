@@ -16,7 +16,7 @@
     <meta property="og:title" content="Expert Website Maintenance & Web Development">
     <meta property="og:description" content="Professional website maintenance and web development services. We build, monitor, and secure fast, responsive websites.">
     <meta property="og:image" content="https://expertwebmaintenance.com/images/og-image.jpg">
-    <meta property="og:url" content="expertwebmaintenance.com/">
+    <meta property="og:url" content="https://expertwebmaintenance.com/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
@@ -42,9 +42,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WV67ZH4G');</script>
     <!-- End Google Tag Manager -->
-    <!-- Calendly widget -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly is loaded on demand by script.js when a "Book a Call" link is clicked -->
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -54,17 +52,12 @@
     <header class="main-header">
         <nav class="main-nav">
             <div class="nav-logo">
-                <picture>
-                    <source srcset="images/logo.webp" type="image/webp">
-                    <source srcset="images/logo.png" type="image/png">
-                    <img 
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect fill='%23fff' width='120' height='120' rx='20'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='40' font-weight='bold' fill='%23667eea'%3EEWM%3C/text%3E%3C/svg%3E"
-                        alt="Expert Web Maintenance Logo"
-                        class="nav-logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                    >
-                    <div class="logo-placeholder" style="display: none;">EWM</div>
-                </picture>
+                <a href="/">
+                    <picture>
+                        <source srcset="images/logo.webp" type="image/webp">
+                        <img src="images/logo.png" alt="Expert Web Maintenance" class="nav-logo-img" width="320" height="70">
+                    </picture>
+                </a>
             </div>
             <button class="hamburger" aria-label="Toggle menu">
                 <span></span>
@@ -75,9 +68,9 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <!-- <li><a href="#testimonials">Testimonials</a></li> — re-enable once real testimonials are added -->
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn-nav-cta">Book a Call</a></li>
+                <li><a href="https://calendly.com/expertwebmaintenance" target="_blank" rel="noopener" class="btn-nav-cta js-book-call">Book a Call</a></li>
             </ul>
         </nav>
     </header>
@@ -94,25 +87,6 @@
 
         <!-- Hero Content -->
         <div class="hero-content">
-            <!-- <div class="hero-logo">
-                 Optimized logo with fallback
-                <picture>
-                    WebP format for modern browsers (add your optimized logo.webp here) 
-                    <source srcset="images/logo.webp" type="image/webp">
-                     Fallback to PNG (add your logo.png here) 
-                    <source srcset="images/logo.png" type="image/png">
-                     Final fallback with lazy loading 
-                    <img 
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect fill='%23fff' width='120' height='120' rx='20'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='40' font-weight='bold' fill='%23667eea'%3EWD%3C/text%3E%3C/svg%3E"
-                        alt="Company Logo"
-                        loading="eager"
-                        class="logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                    >
-                     Fallback placeholder if image fails 
-                    <div class="logo-placeholder" style="display: none;">EWM</div>
-                </picture>
-            </div> -->
             <h1>Expert Website Maintenance & Web Development</h1>
             <p>We monitor, maintain, and build websites that are fast, secure, and designed to evolve with your business.</p>
             <div class="cta-buttons">
@@ -129,13 +103,15 @@
                 <h2>About</h2>
                 <p>I'm a professional web developer specializing in custom website development, ongoing website maintenance, and emergency website repairs. With years of experience building WordPress sites, e-commerce platforms, and custom web applications, I help businesses maintain fast, secure, and high-performing websites that drive results.</p>
                 <p>My comprehensive services include regular website updates, security hardening, performance optimization, technical SEO implementation, and 24/7 emergency support for critical website issues. Whether you need a new website built from scratch using React, PHP, or WordPress, or require dependable maintenance to keep your existing site running smoothly, I provide tailored solutions that evolve with your business needs.</p>
-                <p>I'm available for emergency website repairs including security breaches, malware removal, site crashes, and urgent performance issues. From DNS configuration and database optimization to core web vitals improvements and mobile responsiveness, I ensure your website remains accessible, secure, and optimized for search engines around the clock.</p>
+                <p>I'm available for <a href="/emergency-website-repair/">emergency website repairs</a> including security breaches, malware removal, site crashes, and urgent performance issues. From DNS configuration and database optimization to core web vitals improvements and mobile responsiveness, I ensure your website remains accessible, secure, and optimized for search engines around the clock.</p>
+                <p>Based in <a href="/web-developer-olympia-wa/">Olympia, Washington</a>, working with businesses across the US.</p>
                 <div class="skills">
                     <a href="#contact" class="btn-about">Contact Us</a>
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn-about-book">Book a Call</a>
+                    <a href="https://calendly.com/expertwebmaintenance" target="_blank" rel="noopener" class="btn-about-book js-book-call">Book a Call</a>
                 </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="About Me" class="about-image">
+            <!-- TODO: replace this stock photo with a real photo of yourself (e.g. images/florin.jpg) -->
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Laptop with code on a developer's desk" class="about-image" width="600" height="400" loading="lazy">
         </div>
     </section>
     <!-- Services Section -->
@@ -183,6 +159,7 @@
                         <span class="skill-tag">Monitoring & Backups</span>
                         <span class="skill-tag">Uptime Monitoring</span>
                     </div>
+                    <a href="/wordpress-maintenance/" class="service-link">WordPress maintenance plans →</a>
                 </div>
 
                 <!-- Security -->
@@ -195,6 +172,7 @@
                         <span class="skill-tag">Vulnerability Mitigation</span>
                         <span class="skill-tag">Malware Prevention</span>
                     </div>
+                    <a href="/emergency-website-repair/" class="service-link">Emergency repair & malware removal →</a>
                 </div>
 
                 <!-- Performance & Optimization -->
@@ -247,16 +225,10 @@
                     <div class="slide">
                         <picture>
                             <source srcset="images/web-development-portfolio1.webp" type="image/webp">
-                            <source srcset="images/web-development-portfolio1.jpg" type="image/jpeg">
-                            <img 
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e0e0e0' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProject 1 Image%3C/text%3E%3C/svg%3E"
-                                alt="Project 1"
-                                loading="lazy"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23f0f0f0\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'%23999\'%3EImage Not Available%3C/text%3E%3C/svg%3E';"
-                            >
+                            <img src="images/web-development-portfolio1.jpg" alt="Custom WordPress website built for Renuance, shown on desktop and mobile" width="1280" height="783" loading="lazy">
                         </picture>
-                        <a class="portfolio-btn" href="https://renuance.net/" 
-                            rel="noopener noreferrer nofollow" 
+                        <a class="portfolio-btn" href="https://renuance.net/"
+                            rel="noopener noreferrer nofollow"
                             target="_blank">
                             Visit Site
                         </a>
@@ -266,16 +238,10 @@
                     <div class="slide">
                         <picture>
                             <source srcset="images/portfolio3mockups.webp" type="image/webp">
-                            <source srcset="images/portfolio3mockups.jpg" type="image/jpeg">
-                            <img 
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e0e0e0' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProject 2 Image%3C/text%3E%3C/svg%3E"
-                                alt="Project 2"
-                                loading="lazy"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23f0f0f0\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'%23999\'%3EImage Not Available%3C/text%3E%3C/svg%3E';"
-                            >
+                            <img src="images/portfolio3mockups.jpg" alt="Blue Star Innovation Partners website built with a page builder, shown on multiple devices" width="2560" height="1520" loading="lazy">
                         </picture>
-                        <a class="portfolio-btn" href="https://bluestarinnovationpartners.com/" 
-                            rel="noopener noreferrer nofollow" 
+                        <a class="portfolio-btn" href="https://bluestarinnovationpartners.com/"
+                            rel="noopener noreferrer nofollow"
                             target="_blank">
                             Visit Site
                         </a>
@@ -292,16 +258,10 @@
                     <div class="slide">
                         <picture>
                             <source srcset="images/portfolio2-mockups.webp" type="image/webp">
-                            <source srcset="images/portfolio2-mockups.jpg" type="image/jpeg">
-                            <img 
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e0e0e0' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProject 3 Image%3C/text%3E%3C/svg%3E"
-                                alt="Project 3"
-                                loading="lazy"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23f0f0f0\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'%23999\'%3EImage Not Available%3C/text%3E%3C/svg%3E';"
-                            >
+                            <img src="images/portfolio2-mockups.jpg" alt="Carolina Facial Plastic Surgery website with ACF flexible content modules, shown on multiple devices" width="1500" height="891" loading="lazy">
                         </picture>
-                        <a class="portfolio-btn" href="https://carolinafacialplasticsurgery.com/" 
-                            rel="noopener noreferrer nofollow" 
+                        <a class="portfolio-btn" href="https://carolinafacialplasticsurgery.com/"
+                            rel="noopener noreferrer nofollow"
                             target="_blank">
                             Visit Site
                         </a>
@@ -314,10 +274,62 @@
                 </div>
             </div>
             <div class="slider-controls">
-                <button class="slider-btn" onclick="previousSlide()">‹</button>
-                <button class="slider-btn" onclick="nextSlide()">›</button>
+                <button class="slider-btn" onclick="previousSlide()" aria-label="Previous project">‹</button>
+                <button class="slider-btn" onclick="nextSlide()" aria-label="Next project">›</button>
             </div>
             <div class="slider-dots" id="dots"></div>
+        </div>
+    </section>
+
+    <!--Testimonials
+        Hidden until real client testimonials are collected. To publish:
+        1. Replace the placeholder entries below with real quotes (name, role/company, and ideally a link or photo).
+        2. Remove the `hidden` attribute from the <section>.
+        3. Re-enable the Testimonials links in the nav and footer.
+    -->
+    <section class="testimonials-section" id="testimonials" hidden>
+        <div class="section-header-testimonials">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by businesses worldwide</p>
+        </div>
+
+        <div class="testimonials-slider">
+            <div class="testimonials-container">
+                <div class="testimonials-track" id="track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial">
+                        <div class="testimonial-avatar">
+                            <!-- Optional photo: <img src="images/client1.jpg" alt="Client Name"> -->
+                            CN
+                        </div>
+                        <div class="testimonial-quote">
+                            [PLACEHOLDER: real client quote]
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-author">[Client Name]</div>
+                        <div class="testimonial-role">[Role, Company]</div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial">
+                        <div class="testimonial-avatar">
+                            CN
+                        </div>
+                        <div class="testimonial-quote">
+                            [PLACEHOLDER: real client quote]
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-author">[Client Name]</div>
+                        <div class="testimonial-role">[Role, Company]</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-slider-nav">
+                <button class="testimonial-nav-btn" id="prevBtn" aria-label="Previous testimonial">←</button>
+                <div class="testimonial-slider-dots" id="testimonialDots"></div>
+                <button class="testimonial-nav-btn" id="nextBtn" aria-label="Next testimonial">→</button>
+            </div>
         </div>
     </section>
 
@@ -327,11 +339,11 @@
         <form class="contact-form" action="https://formspree.io/f/xzddvzoe" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" autocomplete="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" autocomplete="email" required>
             </div>
             <div class="form-group">
                 <label for="subject">Subject</label>
@@ -345,195 +357,122 @@
             <input type="hidden" name="_next" value="https://expertwebmaintenance.com/#contact">
         </form>
     </section>
-    <!--Testimonials-->
-    <div class="testimonials-section" id="testimonials">
-        <div class="section-header-testimonials">
-            <h2>What Our Clients Say</h2>
-            <p>Trusted by businesses worldwide</p>
-        </div>
-
-        <div class="testimonials-slider">
-            <div class="testimonials-container">
-                <div class="testimonials-track" id="track">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial">
-                        <div class="testimonial-avatar">
-                            <!-- Replace with actual image: <img src="images/client1.jpg" alt="Sarah Johnson"> -->
-                            SJ
-                        </div>
-                        <div class="testimonial-quote">
-                            Working with this team transformed our online presence. Their attention to detail and commitment to excellence is unmatched. Our website performance improved by 300%!
-                        </div>
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-author">Sarah Johnson</div>
-                        <div class="testimonial-role">CEO, TechStart Inc.</div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial">
-                        <div class="testimonial-avatar">
-                            <!-- Replace with actual image: <img src="images/client2.jpg" alt="Michael Chen"> -->
-                            MC
-                        </div>
-                        <div class="testimonial-quote">
-                            The level of professionalism and expertise is outstanding. They not only built our website but also provided ongoing support that has been invaluable to our growth.
-                        </div>
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-author">Michael Chen</div>
-                        <div class="testimonial-role">Founder, Digital Solutions</div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial">
-                        <div class="testimonial-avatar">
-                            <!-- Replace with actual image: <img src="images/client3.jpg" alt="Emily Rodriguez"> -->
-                            ER
-                        </div>
-                        <div class="testimonial-quote">
-                            Absolutely fantastic! They delivered beyond our expectations. The website is beautiful, fast, and has significantly increased our customer engagement and conversions.
-                        </div>
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-author">Emily Rodriguez</div>
-                        <div class="testimonial-role">Marketing Director, GrowthCo</div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial">
-                        <div class="testimonial-avatar">
-                            <!-- Replace with actual image: <img src="images/client4.jpg" alt="David Thompson"> -->
-                            DT
-                        </div>
-                        <div class="testimonial-quote">
-                            Best investment we've made for our business. The team is responsive, creative, and truly understands what it takes to build a successful online platform.
-                        </div>
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-author">David Thompson</div>
-                        <div class="testimonial-role">Owner, Thompson & Associates</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-slider-nav">
-                <button class="testimonial-nav-btn" id="prevBtn" aria-label="Previous testimonial">←</button>
-                <div class="testimonial-slider-dots" id="testimonialDots"></div>
-                <button class="testimonial-nav-btn" id="nextBtn" aria-label="Next testimonial">→</button>
-            </div>
-        </div>
-    </div>
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Expert Web Maintenance</h3>
                 <p>Expert website maintenance and web development services.</p>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <!-- <li><a href="#testimonials">Testimonials</a></li> -->
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul>
-                    <li>Web Development</li>
-                    <li>Website Maintenance</li>
-                    <li>Security & Performance</li>
-                    <li>Technical SEO</li>
-                    <li>DNS Services</li>
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="/wordpress-maintenance/">WordPress Maintenance</a></li>
+                    <li><a href="/emergency-website-repair/">Emergency Website Repair</a></li>
+                    <li><a href="/web-developer-olympia-wa/">Web Developer in Olympia, WA</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Contact</h3>
                 <div class="cta-buttons">
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/expertwebmaintenance'});return false;" class="btn btn-primary">Book a Call</a>
+                    <a href="https://calendly.com/expertwebmaintenance" target="_blank" rel="noopener" class="btn btn-primary js-book-call">Book a Call</a>
                 </div>
+                <!-- TODO: add real profile URLs, then uncomment
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/YOUR-USERNAME" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
+                -->
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Expert Web Maintenance. All rights reserved.</p>
             <p class="legal-links">
-                <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a> | 
-                <a href="#" onclick="openModal('termsModal'); return false;">Terms of Service</a>
+                <a href="/privacy/">Privacy Policy</a> |
+                <a href="/terms/">Terms of Service</a>
             </p>
         </div>
     </footer>
-    
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="legal-modal">
-        <div class="legal-modal-content">
-            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Privacy Policy</h2>
-            <div class="legal-text">
-                <p><strong>Last updated: January 29, 2026</strong></p>
-                
-                <h3>Information We Collect</h3>
-                <p>We collect information you provide directly to us when you use our services, including name, email, and project details.</p>
-                
-                <h3>How We Use Your Information</h3>
-                <p>We use the information to provide and improve our services, communicate with you, and fulfill our contractual obligations.</p>
-                
-                <h3>Data Security</h3>
-                <p>We implement appropriate security measures to protect your personal information.</p>
-                
-                <h3>Contact Us</h3>
-                <p>For privacy questions, contact us through our website contact form.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Terms of Service Modal -->
-    <div id="termsModal" class="legal-modal">
-        <div class="legal-modal-content">
-            <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
-            <h2>Terms of Service</h2>
-            <div class="legal-text">
-                <p><strong>Last updated: January 29, 2026</strong></p>
-                
-                <h3>Services</h3>
-                <p>Expert Web Maintenance provides web development and maintenance services as agreed upon with clients.</p>
-                
-                <h3>Payment Terms</h3>
-                <p>Payment terms are outlined in individual project agreements.</p>
-                
-                <h3>Intellectual Property</h3>
-                <p>Upon full payment, clients receive ownership of deliverables as specified in project agreements.</p>
-                
-                <h3>Limitation of Liability</h3>
-                <p>Services are provided "as is" within the scope of the agreed project terms.</p>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "name": "Expert Web Maintenance",
-          "description": "Expert website maintenance and web development services",
-          "url": "https://expertwebmaintenance.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Olympia",
-            "addressRegion": "Washington",
-            "addressCountry": "US"
-          },
-          "areaServed": "US",
-          "priceRange": "$$",
-          "serviceType": ["Website Maintenance", "Web Development", "Security", "Performance Optimization", "Technical SEO"]
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://expertwebmaintenance.com/#business",
+  "name": "Expert Website Maintenance",
+  "description": "Expert website maintenance and web development services",
+  "url": "https://expertwebmaintenance.com/",
+  "logo": "https://expertwebmaintenance.com/images/logo.png",
+  "image": "https://expertwebmaintenance.com/images/og-image.jpg",
+  "founder": {
+    "@type": "Person",
+    "name": "Flo"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Olympia",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Olympia"
+    },
+    {
+      "@type": "City",
+      "name": "Lacey"
+    },
+    {
+      "@type": "City",
+      "name": "Tumwater"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Thurston County"
+    },
+    {
+      "@type": "City",
+      "name": "Seattle"
+    },
+    {
+      "@type": "City",
+      "name": "Tacoma"
+    },
+    {
+      "@type": "State",
+      "name": "Washington"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "priceRange": "$$",
+  "serviceType": [
+    "Website Maintenance",
+    "Web Development",
+    "Emergency Website Repair",
+    "Malware Removal",
+    "Security",
+    "Performance Optimization",
+    "Technical SEO"
+  ]
+}
         </script>
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
